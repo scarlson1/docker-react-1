@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t spencercarlson/docker-react-1 Dockerfile # tag only used in travis context
+
+script:
+  - docker run -e CI=true spencercarlson/docker-react-1 npm run test # -- --coverage coverage flag replace by CI=true
