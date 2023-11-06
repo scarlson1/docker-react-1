@@ -9,5 +9,6 @@ RUN npm run build
 
 # FROM statement indicates new block
 FROM nginx
+EXPOSE 80
 # only copy over the build from builder step
 COPY --from=builder /app/build /usr/share/nginx/html
